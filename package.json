@@ -1,0 +1,23 @@
+{
+  "name": "electronsetup",
+  "version": "1.0.0",
+  "description": "chatapp",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "server": "nodemon server.js"
+  },
+  "devDependencies": {
+    "css-loader": "^5.0.1",
+    "electron": "^11.2.2",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.20.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "socket.io": "^3.1.0"
+  }
+}
