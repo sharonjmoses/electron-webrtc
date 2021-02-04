@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "server2": "nodemon server2.js"
   },
   "devDependencies": {
     "electron": "^11.2.2"
@@ -14,6 +15,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.7",
-    "socket.io": "^3.1.0"
+    "simple-peer": "^9.9.3",
+    "socket.io": "^3.1.0",
+    "socket.io-client": "^3.1.1"
   }
 }

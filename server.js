@@ -3,7 +3,7 @@ const app = express()
 
 
 //set the template engine ejs
-app.set('view engine', 'ejs')
+// app.set('view engine', 'ejs')
 
 //middlewares
 app.use(express.static('public'))
@@ -13,7 +13,7 @@ app.use(express.static('public'))
 app.get('/', (req, res) => {
     res.render('index')
 })
-
+const users = {};
 //Listen on port 3000
 server = app.listen(3000)
 
@@ -26,6 +26,15 @@ io.on('connection', (socket) => {
 
 
     socket.username = "Batman"
+
+    if (!users[socket.id]) {
+        users[socket.id] = socket.id;
+    }
+    socket.emit("yourID", socket.id);
+    io.sockets.emit("allUsers", users);
+    socket.on('disconnect', () => {
+        delete users[socket.id];
+    })
 
     //listen on change_username
     socket.on('change_username', (data) => {
@@ -41,6 +50,15 @@ io.on('connection', (socket) => {
     //listen on typing
     socket.on('typing', (data) => {
         socket.broadcast.emit('typing', { username: socket.username })
+    })
+
+
+    socket.on("callUser", (data) => {
+        io.to(data.userToCall).emit('hey', {signal: data.signalData, from: data.from});
+    })
+
+    socket.on("acceptCall", (data) => {
+        io.to(data.to).emit('callAccepted', data.signal);
     })
 })
 
