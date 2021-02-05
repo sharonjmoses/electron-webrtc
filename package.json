@@ -6,8 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "electron .",
-    "server": "nodemon server.js",
-    "server2": "nodemon server2.js"
+    "server": "nodemon server.js"
   },
   "devDependencies": {
     "electron": "^11.2.2"
