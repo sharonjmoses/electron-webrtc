@@ -5,13 +5,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "server": "nodemon server.js"
   },
   "devDependencies": {
-    "css-loader": "^5.0.1",
-    "electron": "^11.2.2",
-    "style-loader": "^2.0.0",
-    "url-loader": "^4.1.1",
-    "webpack": "^5.20.0"
+    "electron": "^11.2.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7",
+    "simple-peer": "^9.9.3",
+    "socket.io": "^3.1.0",
+    "socket.io-client": "^3.1.1"
   }
 }

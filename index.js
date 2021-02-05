@@ -2,12 +2,28 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 
+<<<<<<< HEAD
 function createWindow () {
   // Create the browser window.
+=======
+
+
+
+
+function createWindow () {
+  // Create the browser window.
+
+
+>>>>>>> socket
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
+<<<<<<< HEAD
+=======
+      enableRemoteModule: true,
+      nodeIntegration: true,
+>>>>>>> socket
       preload: path.join(__dirname, 'preload.js')
     }
   })
